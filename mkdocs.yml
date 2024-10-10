@@ -1,6 +1,8 @@
 site_name: Documentación DAW
 site_description: "Documentación de las prácticas"
 site_author: "Álvaro Mejías Benavente"
+nav: 
+  - Practica 2: https://alvaroo-01.github.io/practica2
 markdown_extensions:
   - admonition
   - codehilite
