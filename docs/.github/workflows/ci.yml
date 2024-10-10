@@ -3,7 +3,7 @@ name: Deploy MkDocs site
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -26,4 +26,4 @@ jobs:
       run: |
         mkdocs gh-deploy --force
       env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN}}
+        GITHUB_TOKEN: ${{secrets.TOKEN}}
