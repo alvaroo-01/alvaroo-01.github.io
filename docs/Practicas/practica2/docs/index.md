@@ -4,7 +4,7 @@
 
 Lo primero es lo primero, hay que actualizar, por lo que usamos ```sudo apt update``` y una vez hecho eso, instalamos NGinx mediante ```sudo apt install nginx```
 
-![captura1](/docs/assets/images/1.PNG)
+![captura1](assets/images/1.PNG)
 
 Podemos comprobar que todo está en orden así:
 
