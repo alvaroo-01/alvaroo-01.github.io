@@ -1,13 +1,13 @@
 # Practica 2.2
 # Autenticación en Nginx
 
-## Paquetes necesarios.
+## Paquetes necesarios
 
 Tenemos que empezar comprobando que tenemos el paquete para utilizar ssl y crear así contraseñas:
 
 ![captura1](assets/images/1.PNG)
 
-## Creación de usuarios y contraseñas.
+## Creación de usuarios y contraseñas
 
 Y ahora, creamos los usuarios:
 
@@ -19,7 +19,7 @@ Y con el comando `cat /etc/nginx/.htpasswd` podemos comprobar que están bien cr
 
 ![captura3](assets/images/3.PNG)
 
-## Configurando el servidor.
+## Configurando el servidor
 
 Tenemos que editar el archivo `/etc/nginx/sites-available/nombredenuestraweb` y añadir lo siguiente:
 
@@ -85,3 +85,89 @@ Añadimos esto al location de `sites-available`:
 Y ahora nos permite el acceso:
 
 ![captura18](assets/images/17.PNG)
+
+## Cuestiones finales
+
+
+### Cuestión 1
+
+*Supongamos que yo soy el cliente con la IP 172.1.10.15 e intento acceder al directorio web_muy_guay de mi sitio web, equivocándome al poner el usuario y contraseña. ¿Podré acceder?¿Por qué?*
+
+location /web_muy_guay {
+#...
+satisfy all;    
+deny  172.1.10.6;
+allow 172.1.10.15;
+allow 172.1.3.14;
+deny  all;
+auth_basic "Cuestión final 1";
+auth_basic_user_file conf/htpasswd;
+}
+
+Deben estar correctas tanto la IP como la autenticación del usuario, por lo que no, no podrá acceder.
+
+### Cuestión 2
+
+*ask "Cuestión 1" Supongamos que yo soy el cliente con la IP 172.1.10.15 e intento acceder al directorio web_muy_guay de mi sitio web, introduciendo correctamente usuari y contraseña. ¿Podré acceder? ¿Por qué?*
+
+location /web_muy_guay {
+#...
+satisfy all;    
+deny  all;
+deny  172.1.10.6;
+allow 172.1.10.15;
+allow 172.1.3.14;
+
+auth_basic "Cuestión final 2: The revenge";
+auth_basic_user_file conf/htpasswd;
+}
+
+En este caso sí, pues la IP está permitida y el usuario se ha identificado correctamente. Podrá acceder.
+
+### Cuestión 3
+
+*Supongamos que yo soy el cliente con la IP 172.1.10.15 e intento acceder al directorio web_muy_guay de mi sitio web, introduciendo correctamente usuario y contraseña. ¿Podré acceder? ¿Por qué?*
+
+location /web_muy_guay {
+#...
+satisfy any;    
+deny  172.1.10.6;
+deny 172.1.10.15;
+allow 172.1.3.14;
+
+auth_basic "Cuestión final 3: The final combat";
+auth_basic_user_file conf/htpasswd;
+}
+
+Esta vez no podrá acceder, porque la IP no está permitida.
+
+### Cuestión 4
+
+*A lo mejor no sabéis que tengo una web para documentar todas mis excursiones espaciales con Jeff, es esta: Jeff Bezos y yo*
+
+*Supongamos que quiero restringir el acceso al directorio de proyectos porque es muy secreto, eso quiere decir añadir autenticación básica a la URL:Proyectos*
+
+*Completa la configuración para conseguirlo:*
+
+server {
+    listen 80;
+    listen [::]:80;
+    root /var/www/freewebsitetemplates.com/preview/space-science;
+    index index.html index.htm index.nginx-debian.html;
+    server_name freewebsitetemplates.com www.freewebsitetemplates.com;
+    location              {
+
+        try_files $uri $uri/ =404;
+    }
+}
+
+Tendríamos que añadirle un location /Proyectos que quedase tal que así:
+    location              {
+
+        try_files $uri $uri/ =404;
+    }
+
+    location/Proyectos {
+                        auth_basic "Área restringida (por ejemplo)"
+                        auth_basic_user_file conf/htpasswd
+    }
