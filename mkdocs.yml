@@ -4,6 +4,7 @@ site_author: "Álvaro Mejías Benavente"
 nav: 
   - Practica 2: Practicas/practica2/docs/index.md
   - Practica 2.2: Practicas/practica2.2/docs/index.md
+  - Practica 2.3: Practicas/practica2.3/docs/index.md
 markdown_extensions:
   - admonition
   - codehilite
