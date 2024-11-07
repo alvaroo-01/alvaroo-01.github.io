@@ -58,6 +58,14 @@ Finalmente, en sites-available, creamos un nuevo archivo de configuración:
 
 ![captura15](assets/images/14.PNG)
 
+*Nota: A partir de aquí están las capturas de que la práctica funciona correctamente, sin embargo, están entregadas fuera de plazo.*
+
+Al introducir correctamente los puertos, si nos dirigimos a nuestro servidor web veremos que funciona correctamente:
+
+![captura16](assets/images/16.PNG)
+![captura17](assets/images/17.PNG)
+![captura18](assets/images/18.PNG)
+
 
 ### Cuestiones finales
 
