@@ -1,0 +1,38 @@
+site_name: Documentación DAW
+site_description: "Documentación de las prácticas"
+site_author: "Álvaro Mejías Benavente"
+nav:
+  - home: https://alvaroo-01.github.io
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: True
+theme:
+  name: material
+  features:
+  - toc.integrate
+  - header.autohide
+  - announce.dismiss
+  - search.suggest
+  - search.highlight
+  - content.tabs.link
+  - content.code.annotation
+  - content.code.copy
+  language: es
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Cambiar a modo oscuro
+      primary: teal
+      accent: light green
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch 
+        name: Cambiar a modo claro
+      primary: teal
+      accent: light green
+  font:
+    text: "Verdana"
+    code: "Roboto Mono"
