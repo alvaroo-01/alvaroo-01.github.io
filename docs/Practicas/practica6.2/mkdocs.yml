@@ -1,16 +1,8 @@
 site_name: Documentación DAW
 site_description: "Documentación de las prácticas"
 site_author: "Álvaro Mejías Benavente"
-nav: 
-  - Practica 2: Practicas/practica2/docs/index.md
-  - Practica 2.2: Practicas/practica2.2/docs/index.md
-  - Practica 2.3: Practicas/practica2.3/docs/index.md
-  - Practica 2.4: Practicas/practica2.4/docs/index.md
-  - Practica 2.5: Practicas/practica2.5/docs/index.md
-  - Practica 3.2: Practicas/practica3.2/docs/index.md
-  - Practica 4.1: Practicas/practica4.1/docs/index.md
-  - Practica 6.1: Practicas/practica6.1/docs/index.md
-  - Practica 6.2: Practicas/practica6.2/docs/index.md
+nav:
+  - home: https://alvaroo-01.github.io
 markdown_extensions:
   - admonition
   - codehilite
