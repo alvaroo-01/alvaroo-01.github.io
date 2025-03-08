@@ -22,7 +22,7 @@ section {
 }
 
 .portada {
-    background: linear-gradient(rgb(0, 0, 0, .5), rgb(0, 0, 0, .5)), url('/C:/Users/alvar/Desktop/githubpages/alvaroo_01.github.io/docs/Practicas/practica_diseño/images/harvard-university-cambridge-usa 1.png');
+    background: linear-gradient(rgb(0, 0, 0, .5), rgb(0, 0, 0, .5)), url('../images/harvard-university-cambridge-usa 1.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
