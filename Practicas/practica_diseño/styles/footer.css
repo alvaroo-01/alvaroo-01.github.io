@@ -1,0 +1,35 @@
+footer {
+    display: flex;
+    background-color: yellow;
+    height: 200px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 10em;
+}
+
+.footer-text p {
+    color: black;
+    font-size: 16px;
+    margin: 3px 0;
+}
+
+footer section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer>section>div>img {
+    width: auto;
+    height: 110px;
+    margin: 0 10px;
+}
+
+footer .copy {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
